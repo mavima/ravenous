@@ -1,17 +1,13 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styles from "./SearchBar.module.css";
 
 
-function SearchBar({}) {
+
+function SearchBar({ searchYelp }) {
 
     const [location, setLocation] = useState("");
     const [term, setTerm] = useState("");
     const [sortBy, setSortBy] = useState("best_match");
-    const [active, setActive] = useState(false);
-
-    const activate = (e) => {
-        setActive(e);
-    }
 
     const sortByOptions = {
         "Best Match": "best_match",
@@ -54,8 +50,7 @@ function SearchBar({}) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        const searching = e.target.querySelector('input[type="query"]').value;
-        console.log(`Searching Yelp for ${term} in ${location}`);
+        searchYelp(term, location, sortBy);
     }
 
 
