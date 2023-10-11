@@ -18,6 +18,7 @@ const YelpSearch = {
                 id: business.id,
                 imageSrc: business.image_url,
                 name: business.name,
+                category: business.categories,
                 address: business.location.address1,
                 city: business.location.city,
                 category: business.categories[0].title,

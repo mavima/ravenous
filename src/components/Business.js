@@ -12,6 +12,7 @@ function Business(props) {
             <p>{props.business.address}</p>
             <p>{props.business.city}</p>
             <p>Rating: {props.business.rating}</p>
+            <p>{props.business.category}</p>
         </div>
     );
 }

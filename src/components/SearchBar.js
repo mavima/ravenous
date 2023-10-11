@@ -29,11 +29,7 @@ function SearchBar({ searchYelp }) {
     const handleSearchSort = (sortBy) => {
         handleSortByChange();
         searchYelp(term, location, sortBy);
-        console.log(sortBy);
     }
-
-   
-
 
     const renderSortByOptions = () => {
         return Object.keys(sortByOptions).map((sortByOption) => {
