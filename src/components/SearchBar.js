@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from "./SearchBar.module.css";
 
 
@@ -26,6 +26,14 @@ function SearchBar({ searchYelp }) {
         setSortBy(sortByOptions);
     }
 
+    const handleSearchSort = (sortBy) => {
+        handleSortByChange();
+        searchYelp(term, location, sortBy);
+        console.log(sortBy);
+    }
+
+   
+
 
     const renderSortByOptions = () => {
         return Object.keys(sortByOptions).map((sortByOption) => {
@@ -35,7 +43,7 @@ function SearchBar({ searchYelp }) {
                 key={sortByOptionValue} 
                 className={getSortByClass(sortByOptionValue)} 
                 onClick={() => {
-                    handleSortByChange(sortByOptionValue);
+                    handleSearchSort(sortByOptionValue);
                   }}>
                     {sortByOption}
             </li>
